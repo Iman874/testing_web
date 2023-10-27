@@ -1,9 +1,6 @@
 <?php
     include ('connect.php');
     
-    // Menggunakan database "testing"
-    $conn->select_db("testing");
-
     // Mengambil data dari tabel "table_tes"
     $sql_select_data = "SELECT * FROM table_tes";
     $result = $conn->query($sql_select_data);

@@ -1,12 +1,12 @@
 <?php
-    $username = "root";
-    $server =  "localhost";
-    $pw = "";
+$server_name = "localhost";
+$pengguna = "root";
+$password = "";
+$data_base = "testing";
+$conn = new mysqli ($server_name, $pengguna, $password, $data_base);
 
-    $conn = mysqli_connect($server,$server, $pw);
-
-    if(!$conn){
-        echo "sambungan gagal";
-    } else echo "sambungan berhasil";
-
+//mengecek apakah koneksi dengan mySQL berhasil atau tidak
+if (!$conn){
+	die("koneksi gagal ".mysqli_connect_error());
+}
 ?>
