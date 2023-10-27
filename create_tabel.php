@@ -3,10 +3,10 @@
     $pengguna = "root";
     $password = "";
     $database = "testing";
-    $cek_koneksi = new mysqli ($server_name, $pengguna, $password,$database);
+    $conn = new mysqli ($server_name, $pengguna, $password,$database);
     
     //mengecek koneksi
-    if (!$cek_koneksi){
+    if (!$conn){
         die("Gagal menghubungkan ke database! ".mysqli_connect_error());
     }
     
