@@ -13,7 +13,7 @@ if (!$conn) {
 
 // Membuat database "testing"
 $sql_create_database = "CREATE DATABASE testing";
-if ($conn->query($sql_create_database) === TRUE) {
+if ($conn->query($sql_create_database)) {
     echo "Database 'testing' berhasil dibuat atau sudah ada.<br>";
 } else {
     echo "Error dalam pembuatan database: " . $conn->error;
@@ -27,7 +27,7 @@ $sql_create_table = "CREATE TABLE table_tes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tes varchar(1000)
 )";
-if ($conn->query($sql_create_table) === TRUE) {
+if ($conn->query($sql_create_table)) {
     echo "Tabel 'table_tes' berhasil dibuat atau sudah ada.<br>";
 } else {
     echo "Error dalam pembuatan tabel: " . $conn->error;
@@ -35,7 +35,7 @@ if ($conn->query($sql_create_table) === TRUE) {
 
 // Memasukkan data ke dalam tabel
 $sql_insert_data = "INSERT INTO table_tes (tes) VALUES ('ini adalah tulisan di dalam database')";
-if ($conn->query($sql_insert_data) === TRUE) {
+if ($conn->query($sql_insert_data)) {
     echo "Data berhasil dimasukkan ke dalam tabel.<br>";
 } else {
     echo "Error dalam memasukkan data: " . $conn->error;
