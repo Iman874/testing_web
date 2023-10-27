@@ -5,7 +5,7 @@
 
     $conn = new mysqli($username, $server, $pw);
 
-    if($conn){
+    if(!$conn){
         echo "sambungan gagal";
     } else echo "sambungan berhasil";
 
