@@ -11,7 +11,7 @@ if (!$cek_koneksi) {
   die("Gagal terhubung ke database: " . mysqli_connect_error());
 }
 // Membuat database
-$create_database = "CREATE DATABASE db_webplot";// db_webplot adalah nama database
+$create_database = "CREATE DATABASE testing";// db_webplot adalah nama database
 if (mysqli_query($cek_koneksi, $create_database)) {
   echo "Database telah dibuat!";
 }
