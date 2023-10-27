@@ -1,5 +1,16 @@
 <?php
-    include ('connect.php');
+$username = "root";
+$server = "localhost";
+$pw = "";
+
+// Membuat koneksi ke server MySQL
+$conn = new mysqli($server, $username, $pw);
+
+// Memeriksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi Gagal: " . $conn->connect_error);
+}
+
 // Membuat database "testing"
 $sql_create_database = "CREATE DATABASE IF NOT EXISTS testing";
 if ($conn->query($sql_create_database) === TRUE) {
@@ -14,7 +25,7 @@ $conn->select_db("testing");
 // Membuat tabel "table_tes"
 $sql_create_table = "CREATE TABLE IF NOT EXISTS table_tes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    tes varchar(1000)
+    tes TEXT
 )";
 if ($conn->query($sql_create_table) === TRUE) {
     echo "Tabel 'table_tes' berhasil dibuat atau sudah ada.<br>";
