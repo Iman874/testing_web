@@ -1,8 +1,15 @@
 <?php
-    include ('connect.php');
-
-    // Menggunakan database "testing"
-    $conn->select_db("testing");
+    $server_name = "localhost";
+    $pengguna = "root";
+    $password = "";
+    $database = "testing";
+    $cek_koneksi = new mysqli ($server_name, $pengguna, $password,$database);
+    
+    //mengecek koneksi
+    if (!$cek_koneksi){
+        die("Gagal menghubungkan ke database! ".mysqli_connect_error());
+    }
+    
 
     // Membuat tabel "table_tes"
     $sql_create_table = "CREATE TABLE IF NOT EXISTS table_tes (
