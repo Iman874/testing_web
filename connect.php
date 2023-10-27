@@ -3,7 +3,7 @@
     $server =  "localhost";
     $pw = "";
 
-    $conn = mysqli_connect($username, $server, $pw);
+    $conn = mysqli_connect($server,$server, $pw);
 
     if(!$conn){
         echo "sambungan gagal";
