@@ -8,7 +8,7 @@ $cek_koneksi = mysqli_connect($server_name, $pengguna, $password);
 
 // Memeriksa koneksi
 if (!$cek_koneksi) {
-  die("Gagal terhubung ke database: " . mysqli_connect_error());
+  echo "Gagal terhubung ke database: ";
 }
 // Membuat database
 $create_database = "CREATE DATABASE testing";// db_webplot adalah nama database
