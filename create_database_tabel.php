@@ -14,7 +14,7 @@ $conn->select_db("testing");
 // Membuat tabel "table_tes"
 $sql_create_table = "CREATE TABLE IF NOT EXISTS table_tes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    tes TEXT
+    tes varchar(1000)
 )";
 if ($conn->query($sql_create_table) === TRUE) {
     echo "Tabel 'table_tes' berhasil dibuat atau sudah ada.<br>";
