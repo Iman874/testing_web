@@ -7,7 +7,7 @@ $pw = "";
 $conn = new mysqli($server, $username, $pw);
 
 // Memeriksa koneksi
-if ($conn->connect_error) {
+if (!$conn) {
     die("Koneksi Gagal: " . $conn->connect_error);
 }
 
