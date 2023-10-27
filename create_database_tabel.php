@@ -1,46 +1,21 @@
 <?php
-$username = "root";
-$server = "localhost";
-$pw = "";
+$server_name = "localhost";
+$pengguna = "root";
+$password = "";
 
-// Membuat koneksi ke server MySQL
-$conn = new mysqli($server, $username, $pw);
+// Membuat koneksi antara php dan mySQL
+$cek_koneksi = mysqli_connect($server_name, $pengguna, $password);
 
 // Memeriksa koneksi
-if (!$conn) {
-    die("Koneksi Gagal: " . $conn->connect_error);
+if (!$cek_koneksi) {
+  die("Gagal terhubung ke database: " . mysqli_connect_error());
 }
-
-// Membuat database "testing"
-$sql_create_database = "CREATE DATABASE testing";
-if ($conn->query($sql_create_database)) {
-    echo "Database 'testing' berhasil dibuat atau sudah ada.<br>";
-} else {
-    echo "Error dalam pembuatan database: " . $conn->error;
+// Membuat database
+$create_database = "CREATE DATABASE db_webplot";// db_webplot adalah nama database
+if (mysqli_query($cek_koneksi, $create_database)) {
+  echo "Database telah dibuat!";
 }
-
-// Menggunakan database "testing"
-$conn->select_db("testing");
-
-// Membuat tabel "table_tes"
-$sql_create_table = "CREATE TABLE table_tes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tes varchar(1000)
-)";
-if ($conn->query($sql_create_table)) {
-    echo "Tabel 'table_tes' berhasil dibuat atau sudah ada.<br>";
-} else {
-    echo "Error dalam pembuatan tabel: " . $conn->error;
+else {
+  echo "Proses gagal! gagal membuat database! " . mysqli_error($cek_koneksi);
 }
-
-// Memasukkan data ke dalam tabel
-$sql_insert_data = "INSERT INTO table_tes (tes) VALUES ('ini adalah tulisan di dalam database')";
-if ($conn->query($sql_insert_data)) {
-    echo "Data berhasil dimasukkan ke dalam tabel.<br>";
-} else {
-    echo "Error dalam memasukkan data: " . $conn->error;
-}
-
-// Menutup koneksi
-$conn->close();
 ?>
