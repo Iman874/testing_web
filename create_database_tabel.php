@@ -12,7 +12,7 @@ if (!$conn) {
 }
 
 // Membuat database "testing"
-$sql_create_database = "CREATE DATABASE IF NOT EXISTS testing";
+$sql_create_database = "CREATE DATABASE testing";
 if ($conn->query($sql_create_database) === TRUE) {
     echo "Database 'testing' berhasil dibuat atau sudah ada.<br>";
 } else {
@@ -23,9 +23,9 @@ if ($conn->query($sql_create_database) === TRUE) {
 $conn->select_db("testing");
 
 // Membuat tabel "table_tes"
-$sql_create_table = "CREATE TABLE IF NOT EXISTS table_tes (
+$sql_create_table = "CREATE TABLE table_tes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    tes TEXT
+    tes varchar(1000)
 )";
 if ($conn->query($sql_create_table) === TRUE) {
     echo "Tabel 'table_tes' berhasil dibuat atau sudah ada.<br>";
