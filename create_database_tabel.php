@@ -12,7 +12,7 @@ if (!$cek_koneksi) {
 }
 // Membuat database
 $create_database = "CREATE DATABASE testing";// db_webplot adalah nama database
-if (mysqli_query($cek_koneksi, $create_database)) {
+if (mysqli_query(!$cek_koneksi, $create_database)) {
   echo "Database telah dibuat!";
 }
 else {
