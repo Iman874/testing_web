@@ -1,7 +1,7 @@
 <?php
     require ('connect.php');
 
-    $table_name = "tabel_tes"; // Nama tabel yang ingin diekspor
+    $table_name = "table_tes"; // Nama tabel yang ingin diekspor
     $filename = "export_testing.sql"; // Nama file .sql yang akan dihasilkan
 
     // Mengambil data dari tabel "tabel_tes"
