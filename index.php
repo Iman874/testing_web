@@ -1,5 +1,5 @@
 <?php
-    include ('connect.php');
+    require ('connect.php');
     
     // Mengambil data dari tabel "table_tes"
     $sql_select_data = "SELECT * FROM table_tes";
