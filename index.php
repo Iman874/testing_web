@@ -27,5 +27,6 @@
 </head>
 <body>
     <h1>HELLO PHP</h1>
+    <h2>INI MERUPAKAN PERUBAHAN DARI AKUN KEDUA</h2>
 </body>
 </html>
